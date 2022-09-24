@@ -1,0 +1,8 @@
+C:\Users\admin\source\repos\ExplorerPane\ExplorerPane\bin\Release\ExplorerPane.dll
+C:\Users\admin\source\repos\ExplorerPane\ExplorerPane\obj\Release\ExplorerPane.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\ExplorerPane\ExplorerPane\obj\Release\ExplorerPane.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\ExplorerPane\ExplorerPane\obj\Release\ExplorerPane.dll
+G:\repogitory\hm_jsmode_explorerpane\ExplorerPane\ExplorerPane\bin\Release\explorerpane.dll
+G:\repogitory\hm_jsmode_explorerpane\ExplorerPane\ExplorerPane\obj\Release\ExplorerPane.csproj.AssemblyReference.cache
+G:\repogitory\hm_jsmode_explorerpane\ExplorerPane\ExplorerPane\obj\Release\ExplorerPane.csproj.CoreCompileInputs.cache
+G:\repogitory\hm_jsmode_explorerpane\ExplorerPane\ExplorerPane\obj\Release\explorerpane.dll
