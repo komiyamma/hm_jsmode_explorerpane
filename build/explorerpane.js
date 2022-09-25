@@ -7,27 +7,14 @@
 /// <reference path="../../hm_jsmode_ts_difinition/types/hm_jsmode_strict.d.ts" />
 (function () {
     var guid = "{0F6BBE65-3EE5-49FD-B798-991B421150F1}";
-    var op_dllobj = null;
+    var op_dllobj = hidemaru.loadDll("HmOutputPane.dll");
     var selfdir = null;
     var hidemaruhandlezero = hidemaru.getCurrentWindowHandle();
     function _output(msg) {
-        if (!op_dllobj) {
-            op_dllobj = hidemaru.loadDll("HmOutputPane.dll");
-        }
-        if (op_dllobj) {
-            var msg_replaced = msg.replace(/\r\n/g, "\n").replace(/\n/g, "\r\n");
-            return op_dllobj.dllFunc.Output(hidemaruhandlezero, msg_replaced);
-        }
-        return false;
+        var msg_replaced = msg.replace(/\r\n/g, "\n").replace(/\n/g, "\r\n");
+        return op_dllobj.dllFunc.Output(hidemaruhandlezero, msg_replaced);
     }
-    var ep_dllobj = null;
-    function get_ep_dllobj() {
-        if (!ep_dllobj) {
-            ep_dllobj = hidemaru.loadDll("HmExplorerPane.dll");
-        }
-        return ep_dllobj;
-    }
-    get_ep_dllobj(); // ここで読み込む癖を付けておく。
+    var ep_dllobj = hidemaru.loadDll("HmExplorerPane.dll");
     // execjsで読み込まれていたら、{filename,directory}のそれぞれのプロパティに有効な値が入る
     function get_including_by_execjs() {
         var cjf = hidemaruGlobal.currentjsfilename();
@@ -64,19 +51,19 @@
         return ep_dllobj.dllFunc.GetMode(hidemaruhandlezero);
     }
     function _loadProject(filepath) {
-        return op_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
+        return ep_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
     }
     function _saveProject(filepath) {
-        return op_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
+        return ep_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
     }
     function _getProject() {
-        return op_dllobj.dllFuncStr.GetProject(hidemaruhandlezero);
+        return ep_dllobj.dllFuncStr.GetProject(hidemaruhandlezero);
     }
     function _getUpdated() {
-        return op_dllobj.dllFunc.GetUpdated(hidemaruhandlezero);
+        return ep_dllobj.dllFunc.GetUpdated(hidemaruhandlezero);
     }
     function _getCurrentDir() {
-        return op_dllobj.dllFuncStr.GetCurrentDir(hidemaruhandlezero);
+        return ep_dllobj.dllFuncStr.GetCurrentDir(hidemaruhandlezero);
     }
     var ep_windowhandle = null;
     function _getWindowHandle() {

@@ -12,33 +12,15 @@ declare var ExplorerPane: any;
 (function () {
     const guid = "{0F6BBE65-3EE5-49FD-B798-991B421150F1}";
 
-    let op_dllobj: hidemaru.ILoadDllResult = null;
+    let op_dllobj: hidemaru.ILoadDllResult = hidemaru.loadDll("HmOutputPane.dll");
     let selfdir: string = null;
     let hidemaruhandlezero = hidemaru.getCurrentWindowHandle();
     function _output(msg: string): boolean {
-
-        if (!op_dllobj) {
-            op_dllobj = hidemaru.loadDll("HmOutputPane.dll");
-        }
-
-        if (op_dllobj) {
-            let msg_replaced = msg.replace(/\r\n/g, "\n").replace(/\n/g, "\r\n");
-            return op_dllobj.dllFunc.Output(hidemaruhandlezero, msg_replaced);
-        }
-
-        return false;
+        let msg_replaced = msg.replace(/\r\n/g, "\n").replace(/\n/g, "\r\n");
+        return op_dllobj.dllFunc.Output(hidemaruhandlezero, msg_replaced);
     }
 
-    let ep_dllobj: hidemaru.ILoadDllResult = null;
-    function get_ep_dllobj(): hidemaru.ILoadDllResult {
-        if (!ep_dllobj) {
-            ep_dllobj = hidemaru.loadDll("HmExplorerPane.dll");
-        }
-
-        return ep_dllobj;
-    }
-
-    get_ep_dllobj(); // ここで読み込む癖を付けておく。
+    let ep_dllobj: hidemaru.ILoadDllResult = hidemaru.loadDll("HmExplorerPane.dll");
     
     interface SelfDllInfo {
         filename?: string,
@@ -84,23 +66,23 @@ declare var ExplorerPane: any;
     }
 
     function _loadProject(filepath: string): number {
-        return op_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
+        return ep_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
     }
 
     function _saveProject(filepath: string): number {
-        return op_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
+        return ep_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
     }
 
     function _getProject(): string {
-        return op_dllobj.dllFuncStr.GetProject(hidemaruhandlezero);
+        return ep_dllobj.dllFuncStr.GetProject(hidemaruhandlezero);
     }
 
     function _getUpdated(): number {
-        return op_dllobj.dllFunc.GetUpdated(hidemaruhandlezero);
+        return ep_dllobj.dllFunc.GetUpdated(hidemaruhandlezero);
     }
 
     function _getCurrentDir(): string {
-        return op_dllobj.dllFuncStr.GetCurrentDir(hidemaruhandlezero);
+        return ep_dllobj.dllFuncStr.GetCurrentDir(hidemaruhandlezero);
     }
 
     let ep_windowhandle = null;
