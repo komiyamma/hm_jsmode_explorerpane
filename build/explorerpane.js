@@ -54,7 +54,7 @@
         return ep_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
     }
     function _saveProject(filepath) {
-        return ep_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
+        return ep_dllobj.dllFunc.SaveProject(hidemaruhandlezero, filepath);
     }
     function _getProject() {
         return ep_dllobj.dllFuncStr.GetProject(hidemaruhandlezero);

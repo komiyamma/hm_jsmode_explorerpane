@@ -70,7 +70,7 @@ declare var ExplorerPane: any;
     }
 
     function _saveProject(filepath: string): number {
-        return ep_dllobj.dllFunc.LoadProject(hidemaruhandlezero, filepath);
+        return ep_dllobj.dllFunc.SaveProject(hidemaruhandlezero, filepath);
     }
 
     function _getProject(): string {

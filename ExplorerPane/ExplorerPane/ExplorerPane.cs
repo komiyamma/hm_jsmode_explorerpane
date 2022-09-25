@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using HmNetCOM;
 using static HmNetCOM.Hm;
 
-namespace OutputPane
+namespace ExplorerPane
 {
 
     [ClassInterface(ClassInterfaceType.None)]
