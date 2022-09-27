@@ -51,6 +51,8 @@ declare namespace ExplorerPane {
     /**
      * プロジェクトファイル名を指定してプロジェクトを読み込みます。
      *
+     * @see saveProject
+     *
      * @returns
      * 成功したら0以外を返す、失敗したら0を返す。
      */
@@ -69,8 +71,6 @@ declare namespace ExplorerPane {
     /**
      * ファイルマネージャ枠のプロジェクトのファイル名を取得します。
      * 
-     * @see saveProject
-     *
      * @returns
      * プロジェクトのファイルのフルパスを返す。    
      * 失敗した場合、空文字を返す。
