@@ -20,6 +20,8 @@ declare namespace ExplorerPane {
      * - 5 プロジェクトモード
      * - 6 フォルダ+ファイル一覧モード
      *
+     * @see getMode
+     * 
      * @returns
      * 成功したら0以外を返す、失敗したら0を返す。
      */
@@ -38,6 +40,8 @@ declare namespace ExplorerPane {
      * - 5 プロジェクトモード
      * - 6 フォルダ+ファイル一覧モード
      * 
+     * @see setMode
+     * 
      * @returns
      * 現在のモードの値が返る。    
      * 失敗時は-1を返します。
@@ -55,7 +59,7 @@ declare namespace ExplorerPane {
     /**
      * ファイルマネージャ枠のプロジェクトを指定ファイルに保存します。
      * 
-     * @see pop
+     * @see loadProject
      *
      * @returns
      * 成功したら0以外を返す、失敗したら0を返す。
@@ -65,7 +69,7 @@ declare namespace ExplorerPane {
     /**
      * ファイルマネージャ枠のプロジェクトのファイル名を取得します。
      * 
-     * @see pop
+     * @see saveProject
      *
      * @returns
      * 成功したら0以外を返す、失敗したら0を返す。
@@ -152,7 +156,7 @@ declare namespace ExplorerPane {
 
     /**
      * ファイルマネージャ枠のハンドルを常に取得することが出来ます。    
-     *ファイルマネージャ枠に対してネイティブ関数を利用した操作をする際に    
+     * ファイルマネージャ枠に対してネイティブ関数を利用した操作をする際に    
      * このハンドルが必要となります。
      *
      * @returns
