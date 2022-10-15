@@ -2,7 +2,7 @@
  * @file 秀丸のjsmode用のTypeScript定義ファイル
  * @author Akitsugu Komiyama
  * @license MIT
- * @version v1.0.1
+ * @version v1.0.3
  */
 
 declare namespace ExplorerPane {
